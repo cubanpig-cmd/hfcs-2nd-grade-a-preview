@@ -1,0 +1,9 @@
+.preview-banner{position:sticky;top:0;z-index:50;background:#b91c1c;color:#fff;text-align:center;font-weight:800;padding:.5rem 1rem;font-size:1rem}
+[hidden]{display:none!important}
+.quiz button,[data-mount] button{cursor:pointer}
+[data-mount] .grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+[data-mount] .inline-grid{display:inline-grid}
+[data-tabbar]{scrollbar-width:thin}
+[data-check] .box{font-size:1.4rem;line-height:1;border:0}
+.text-grass{color:#2f7d32}.text-apple-deep{color:#b42318}
+@media (max-width:640px){[data-tabbar]{flex-wrap:nowrap!important;overflow-x:auto}}
