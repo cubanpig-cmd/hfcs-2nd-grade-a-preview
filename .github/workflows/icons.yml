@@ -1,0 +1,17 @@
+name: decode-icons
+on:
+  push:
+    paths: ["icons-b64/go"]
+permissions:
+  contents: write
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          for f in icons-b64/*.b64; do base64 -d "$f" > "$(basename "$f" .b64)"; done
+          git config user.name "site-bot"; git config user.email "site-bot@users.noreply.github.com"
+          git add *.png favicon.ico
+          git diff --cached --quiet || git commit -m "Add site icons (decoded)"
+          git push
